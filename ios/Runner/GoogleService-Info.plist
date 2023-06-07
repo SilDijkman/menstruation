@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>520182557568-k6oiqpj5ir07209um2oeuse9g8f49u4k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.520182557568-k6oiqpj5ir07209um2oeuse9g8f49u4k</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>520182557568-at6kus270tedonkf17f6p4auqlss2vsb.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA2cQ0Td0esTxz-Wqj8YCHaaseGZALU_4E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>520182557568</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mycompany.menstrualtrackingapp</string>
+	<key>PROJECT_ID</key>
+	<string>menstrual-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>menstrual-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:520182557568:ios:318352e8c0de743945af65</string>
+</dict>
+</plist>

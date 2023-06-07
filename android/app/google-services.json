@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "520182557568",
+    "project_id": "menstrual-app",
+    "storage_bucket": "menstrual-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520182557568:android:0fafc78dd2b2492f45af65",
+        "android_client_info": {
+          "package_name": "com.mycompany.menstrualtrackingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "520182557568-at6kus270tedonkf17f6p4auqlss2vsb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.menstrualtrackingapp",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "520182557568-t561mknec8rkushf19ms7g2m1jb2g5qd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzxKoEE5xwk7Fn0zyQsw8EcV8fE5RvDY8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "520182557568-t561mknec8rkushf19ms7g2m1jb2g5qd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "520182557568-k6oiqpj5ir07209um2oeuse9g8f49u4k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.menstrualtrackingapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
