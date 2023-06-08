@@ -219,7 +219,7 @@ class _NavigationWidgetState extends State<NavigationWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.14, 0.66),
+                        alignment: AlignmentDirectional(0.01, 0.81),
                         child: FlutterFlowDropDown<int>(
                           controller:
                               _model.dropDownDateSelectorValueController ??=
@@ -267,7 +267,7 @@ class _NavigationWidgetState extends State<NavigationWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.04, 0.75),
+                        alignment: AlignmentDirectional(0.04, 0.93),
                         child: Text(
                           FFAppState().dateSelected.last.toString(),
                           style: FlutterFlowTheme.of(context).bodyMedium,

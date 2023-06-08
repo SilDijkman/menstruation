@@ -92,7 +92,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(-1.0, 0.08),
+                alignment: AlignmentDirectional(-2.0, 0.27),
                 child: Container(
                   width: 267.0,
                   height: 164.0,
@@ -102,10 +102,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.51, 0.08),
+                alignment: AlignmentDirectional(0.57, 0.27),
                 child: Container(
-                  width: 165.0,
-                  height: 165.0,
+                  width: 164.0,
+                  height: 164.0,
                   decoration: BoxDecoration(
                     color: Color(0xFF313131),
                     shape: BoxShape.circle,
@@ -113,7 +113,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(1.46, 0.79),
+                alignment: AlignmentDirectional(2.65, 0.92),
                 child: Container(
                   width: 248.0,
                   height: 136.0,
@@ -123,7 +123,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(-0.18, 0.79),
+                alignment: AlignmentDirectional(0.05, 0.92),
                 child: Container(
                   width: 136.0,
                   height: 136.0,
@@ -134,7 +134,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(-0.97, -0.01),
+                alignment: AlignmentDirectional(-0.72, 0.08),
                 child: Text(
                   valueOrDefault<String>(
                     () {
@@ -188,7 +188,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(-0.73, 0.14),
+                alignment: AlignmentDirectional(-0.7, 0.29),
                 child: FFButtonWidget(
                   onPressed: () async {
                     context.pushNamed('Info_Page');
@@ -215,7 +215,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.54, 0.69),
+                alignment: AlignmentDirectional(0.63, 0.78),
                 child: FFButtonWidget(
                   onPressed: () async {
                     context.pushNamed('symptoms_page');
@@ -242,7 +242,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(-0.01, -0.6),
+                alignment: AlignmentDirectional(0.0, -0.55),
                 child: Text(
                   valueOrDefault<String>(
                     () {
@@ -289,6 +289,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     }(),
                     '1',
                   ),
+                  textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Poppins',
                         color: FlutterFlowTheme.of(context).primaryBackground,
