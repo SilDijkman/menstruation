@@ -65,7 +65,7 @@ class _NavigationWidgetState extends State<NavigationWidget> {
             },
           ),
           title: Text(
-            'Navigation (user testi)',
+            'Navigation (user test)',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Poppins',
                   color: Colors.white,

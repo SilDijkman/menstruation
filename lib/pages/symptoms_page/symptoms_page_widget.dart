@@ -319,7 +319,7 @@ class _SymptomsPageWidgetState extends State<SymptomsPageWidget> {
                                             23)) {
                                       return FFAppState().symptomText[17];
                                     } else {
-                                      return 'tt';
+                                      return 'Please select a symptom';
                                     }
                                   }(),
                                 ),
