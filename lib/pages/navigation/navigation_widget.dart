@@ -24,12 +24,6 @@ class _NavigationWidgetState extends State<NavigationWidget> {
   late NavigationModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
-  int get pageViewCurrentIndex => _model.pageViewController != null &&
-          _model.pageViewController!.hasClients &&
-          _model.pageViewController!.page != null
-      ? _model.pageViewController!.page!.round()
-      : 0;
 
   @override
   void initState() {
@@ -41,7 +35,6 @@ class _NavigationWidgetState extends State<NavigationWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -50,7 +43,7 @@ class _NavigationWidgetState extends State<NavigationWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -246,11 +239,8 @@ class _NavigationWidgetState extends State<NavigationWidget> {
                           },
                           width: 300.0,
                           height: 50.0,
-                          searchHintTextStyle:
-                              FlutterFlowTheme.of(context).labelMedium,
                           textStyle: FlutterFlowTheme.of(context).bodyMedium,
                           hintText: 'Please select day...',
-                          searchHintText: 'Search for an item...',
                           icon: Icon(
                             Icons.keyboard_arrow_down_rounded,
                             color: FlutterFlowTheme.of(context).secondaryText,

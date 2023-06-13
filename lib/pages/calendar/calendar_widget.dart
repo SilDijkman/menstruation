@@ -1,5 +1,4 @@
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -20,7 +19,6 @@ class _CalendarWidgetState extends State<CalendarWidget> {
   late CalendarModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -32,7 +30,6 @@ class _CalendarWidgetState extends State<CalendarWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -41,7 +38,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -78,130 +75,169 @@ class _CalendarWidgetState extends State<CalendarWidget> {
           top: true,
           child: Stack(
             children: [
-              Container(
-                width: double.infinity,
-                height: 276.0,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: Image.asset(
-                      'assets/images/fulldesign.png',
-                    ).image,
-                  ),
-                ),
-                child: Stack(
-                  children: [],
-                ),
-              ),
-              Align(
-                alignment: AlignmentDirectional(0.0, 0.59),
-                child: FlutterFlowCalendar(
-                  color: Color(0x1EFFFFFF),
-                  iconColor: FlutterFlowTheme.of(context).info,
-                  weekFormat: false,
-                  weekStartsMonday: false,
-                  onChange: (DateTimeRange? newSelectedDate) {
-                    setState(
-                        () => _model.calendarSelectedDay = newSelectedDate);
-                  },
-                  titleStyle: TextStyle(),
-                  dayOfWeekStyle: TextStyle(),
-                  dateStyle: GoogleFonts.getFont(
-                    'Open Sans',
-                  ),
-                  selectedDateStyle: TextStyle(),
-                  inactiveDateStyle: TextStyle(),
-                ),
-              ),
-              Align(
-                alignment: AlignmentDirectional(-0.94, 0.59),
-                child: Container(
-                  width: 206.0,
-                  height: 36.0,
-                  decoration: BoxDecoration(
-                    color: Color(0x3A38B6FF),
-                    borderRadius: BorderRadius.circular(90.0),
-                    shape: BoxShape.rectangle,
-                  ),
-                ),
-              ),
-              Align(
-                alignment: AlignmentDirectional(1.06, 0.45),
-                child: Container(
-                  width: 110.0,
-                  height: 36.0,
-                  decoration: BoxDecoration(
-                    color: Color(0x3A38B6FF),
-                    borderRadius: BorderRadius.circular(90.0),
-                    shape: BoxShape.rectangle,
-                  ),
-                ),
-              ),
-              Align(
-                alignment: AlignmentDirectional(0.01, -0.77),
-                child: Container(
-                  width: 206.0,
-                  height: 206.0,
-                  decoration: BoxDecoration(
-                    color: Color(0xFF38B6FF),
-                    shape: BoxShape.circle,
-                  ),
-                ),
-              ),
-              Align(
-                alignment: AlignmentDirectional(0.02, -0.56),
-                child: StreamBuilder<List<NotificationValueRecord>>(
-                  stream: queryNotificationValueRecord(
-                    singleRecord: true,
-                  ),
-                  builder: (context, snapshot) {
-                    // Customize what your widget looks like when it's loading.
-                    if (!snapshot.hasData) {
-                      return Center(
-                        child: SizedBox(
-                          width: 50.0,
-                          height: 50.0,
-                          child: CircularProgressIndicator(
-                            color: FlutterFlowTheme.of(context).primary,
-                          ),
-                        ),
-                      );
-                    }
-                    List<NotificationValueRecord>
-                        textNotificationValueRecordList = snapshot.data!;
-                    // Return an empty Container when the item does not exist.
-                    if (snapshot.data!.isEmpty) {
-                      return Container();
-                    }
-                    final textNotificationValueRecord =
-                        textNotificationValueRecordList.isNotEmpty
-                            ? textNotificationValueRecordList.first
-                            : null;
-                    return Text(
-                      valueOrDefault<String>(
-                        () {
-                          if (FFAppState().dateSelected.last == 1) {
-                            return 'ur on ur period';
-                          } else if (FFAppState().dateSelected.last == 5) {
-                            return 'ur on ur period';
-                          } else if (FFAppState().dateSelected.last == 7) {
-                            return '23 days till next period';
-                          } else if (FFAppState()
-                                  .dateSelected
-                                  .last
-                                  .toString() ==
-                              '9') {
-                            return '21 days till next period';
-                          } else {
-                            return '0';
-                          }
-                        }(),
-                        '0',
+              Stack(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    height: 276.0,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: Image.asset(
+                          'assets/images/fulldesign.png',
+                        ).image,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyMedium,
-                    );
-                  },
-                ),
+                    ),
+                    child: Stack(
+                      children: [],
+                    ),
+                  ),
+                  Align(
+                    alignment: AlignmentDirectional(0.0, -0.9),
+                    child: Container(
+                      width: 206.0,
+                      height: 206.0,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF38B6FF),
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: AlignmentDirectional(0.02, -0.6),
+                    child: StreamBuilder<List<NotificationValueRecord>>(
+                      stream: queryNotificationValueRecord(
+                        singleRecord: true,
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                color: FlutterFlowTheme.of(context).primary,
+                              ),
+                            ),
+                          );
+                        }
+                        List<NotificationValueRecord>
+                            textNotificationValueRecordList = snapshot.data!;
+                        // Return an empty Container when the item does not exist.
+                        if (snapshot.data!.isEmpty) {
+                          return Container();
+                        }
+                        final textNotificationValueRecord =
+                            textNotificationValueRecordList.isNotEmpty
+                                ? textNotificationValueRecordList.first
+                                : null;
+                        return Text(
+                          valueOrDefault<String>(
+                            () {
+                              if (FFAppState().dateSelected.last <= 5) {
+                                return 'You are on your period';
+                              } else if (FFAppState().dateSelected.last == 7) {
+                                return '23 days until your next period';
+                              } else if (FFAppState()
+                                      .dateSelected
+                                      .last
+                                      .toString() ==
+                                  '9') {
+                                return '21 Days until your next period';
+                              } else if (FFAppState()
+                                      .dateSelected
+                                      .last
+                                      .toString() ==
+                                  '11') {
+                                return '19 Days until your next period';
+                              } else if (FFAppState()
+                                      .dateSelected
+                                      .last
+                                      .toString() ==
+                                  '12') {
+                                return '18 Days until your next period';
+                              } else if (FFAppState()
+                                      .dateSelected
+                                      .last
+                                      .toString() ==
+                                  '13') {
+                                return '17 Days until your next period';
+                              } else if (FFAppState()
+                                      .dateSelected
+                                      .last
+                                      .toString() ==
+                                  '14') {
+                                return '16  Days until your next period';
+                              } else if (FFAppState()
+                                      .dateSelected
+                                      .last
+                                      .toString() ==
+                                  '16') {
+                                return '14 Days until your next period';
+                              } else if (FFAppState()
+                                      .dateSelected
+                                      .last
+                                      .toString() ==
+                                  '20') {
+                                return '10 Days until your next period';
+                              } else if (FFAppState()
+                                      .dateSelected
+                                      .last
+                                      .toString() ==
+                                  '23') {
+                                return '7 Days until your next period';
+                              } else if (FFAppState()
+                                      .dateSelected
+                                      .last
+                                      .toString() ==
+                                  '25') {
+                                return '5 Days until your next period';
+                              } else if (FFAppState()
+                                      .dateSelected
+                                      .last
+                                      .toString() ==
+                                  '26') {
+                                return '4 Days until your next period';
+                              } else if (FFAppState()
+                                      .dateSelected
+                                      .last
+                                      .toString() ==
+                                  '29') {
+                                return '1 Day until your next period';
+                              } else {
+                                return 'nothinh';
+                              }
+                            }(),
+                            '1',
+                          ),
+                          style: FlutterFlowTheme.of(context).bodyMedium,
+                        );
+                      },
+                    ),
+                  ),
+                  Align(
+                    alignment: AlignmentDirectional(0.0, 1.01),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 1.615,
+                      height: 401.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        image: DecorationImage(
+                          fit: BoxFit.fitWidth,
+                          image: Image.asset(
+                            'assets/images/calendar.png',
+                          ).image,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              ListView(
+                padding: EdgeInsets.zero,
+                scrollDirection: Axis.vertical,
+                children: [],
               ),
             ],
           ),

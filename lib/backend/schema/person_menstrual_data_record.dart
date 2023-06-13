@@ -54,6 +54,14 @@ class PersonMenstrualDataRecord extends FirestoreRecord {
   @override
   String toString() =>
       'PersonMenstrualDataRecord(reference: ${reference.path}, data: $snapshotData)';
+
+  @override
+  int get hashCode => reference.path.hashCode;
+
+  @override
+  bool operator ==(other) =>
+      other is PersonMenstrualDataRecord &&
+      reference.path.hashCode == other.reference.path.hashCode;
 }
 
 Map<String, dynamic> createPersonMenstrualDataRecordData({

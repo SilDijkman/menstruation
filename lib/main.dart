@@ -94,7 +94,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPageName = 'HomePage';
+  String _currentPageName = 'Home';
   late Widget? _currentPage;
 
   @override
@@ -107,10 +107,10 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'HomePage': HomePageWidget(),
+      'Home': HomeWidget(),
       'Calendar': CalendarWidget(),
-      'Navigation': NavigationWidget(),
       'symptoms_page': SymptomsPageWidget(),
+      'Navigation': NavigationWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -147,18 +147,18 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.analytics_outlined,
-              size: 24.0,
-            ),
-            label: 'Navigation',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
               Icons.add,
               size: 24.0,
             ),
             label: 'Symptom',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.analytics_outlined,
+              size: 24.0,
+            ),
+            label: 'Navigation',
             tooltip: '',
           )
         ],

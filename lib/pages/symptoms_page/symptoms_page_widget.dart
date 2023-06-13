@@ -23,7 +23,6 @@ class _SymptomsPageWidgetState extends State<SymptomsPageWidget> {
   late SymptomsPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -43,7 +42,6 @@ class _SymptomsPageWidgetState extends State<SymptomsPageWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -82,7 +80,7 @@ class _SymptomsPageWidgetState extends State<SymptomsPageWidget> {
                 ? symptomsPageSymptomsOptionsRecordList.first
                 : null;
         return GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -145,6 +143,16 @@ class _SymptomsPageWidgetState extends State<SymptomsPageWidget> {
                           padding: EdgeInsets.zero,
                           scrollDirection: Axis.vertical,
                           children: [
+                            Text(
+                              'Are you experiencing any symptoms right now?',
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineSmall
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 20.0,
+                                  ),
+                            ),
                             Align(
                               alignment: AlignmentDirectional(0.0, -1.0),
                               child: Padding(
@@ -177,12 +185,9 @@ class _SymptomsPageWidgetState extends State<SymptomsPageWidget> {
                                       () => _model.dropDownValue = val),
                                   width: 300.0,
                                   height: 50.0,
-                                  searchHintTextStyle:
-                                      FlutterFlowTheme.of(context).labelMedium,
                                   textStyle:
                                       FlutterFlowTheme.of(context).bodyMedium,
                                   hintText: 'Please select...',
-                                  searchHintText: 'Search for an item...',
                                   icon: Icon(
                                     Icons.keyboard_arrow_down_rounded,
                                     color: FlutterFlowTheme.of(context)
