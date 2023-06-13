@@ -79,7 +79,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 276.0,
+                    height: 459.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.cover,
@@ -95,10 +95,10 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                   Align(
                     alignment: AlignmentDirectional(0.0, -0.9),
                     child: Container(
-                      width: 206.0,
-                      height: 206.0,
+                      width: 233.0,
+                      height: 233.0,
                       decoration: BoxDecoration(
-                        color: Color(0xFF38B6FF),
+                        color: Color(0x99E62D2B),
                         shape: BoxShape.circle,
                       ),
                     ),
@@ -226,7 +226,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                         image: DecorationImage(
                           fit: BoxFit.fitWidth,
                           image: Image.asset(
-                            'assets/images/calendar.png',
+                            'assets/images/graph.png',
                           ).image,
                         ),
                       ),

@@ -100,7 +100,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.41, 0.08),
+                                alignment: AlignmentDirectional(0.35, 0.08),
                                 child: Container(
                                   width: 164.0,
                                   height: 164.0,
@@ -347,7 +347,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-0.3, 0.9),
+                                alignment: AlignmentDirectional(-0.04, 0.9),
                                 child: Container(
                                   width: 164.0,
                                   height: 164.0,
