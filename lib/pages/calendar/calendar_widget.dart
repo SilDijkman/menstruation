@@ -80,7 +80,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 490.0,
+                    height: 335.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.cover,
@@ -93,139 +93,151 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                       children: [],
                     ),
                   ),
+                ],
+              ),
+              ListView(
+                padding: EdgeInsets.zero,
+                scrollDirection: Axis.vertical,
+                children: [
                   Align(
                     alignment: AlignmentDirectional(0.0, -0.9),
-                    child: Container(
-                      width: 233.0,
-                      height: 233.0,
-                      decoration: BoxDecoration(
-                        color: Color(0x99E62D2B),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 0.0, 10.0, 0.0),
-                          child: StreamBuilder<List<NotificationValueRecord>>(
-                            stream: queryNotificationValueRecord(
-                              singleRecord: true,
-                            ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                      child: Container(
+                        width: 233.0,
+                        height: 233.0,
+                        decoration: BoxDecoration(
+                          color: Color(0x99E62D2B),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Align(
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 0.0, 10.0, 0.0),
+                            child: StreamBuilder<List<NotificationValueRecord>>(
+                              stream: queryNotificationValueRecord(
+                                singleRecord: true,
+                              ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                      ),
                                     ),
+                                  );
+                                }
+                                List<NotificationValueRecord>
+                                    textNotificationValueRecordList =
+                                    snapshot.data!;
+                                // Return an empty Container when the item does not exist.
+                                if (snapshot.data!.isEmpty) {
+                                  return Container();
+                                }
+                                final textNotificationValueRecord =
+                                    textNotificationValueRecordList.isNotEmpty
+                                        ? textNotificationValueRecordList.first
+                                        : null;
+                                return AutoSizeText(
+                                  valueOrDefault<String>(
+                                    () {
+                                      if (FFAppState().dateSelected.last <= 5) {
+                                        return 'You are on your period';
+                                      } else if (FFAppState()
+                                              .dateSelected
+                                              .last ==
+                                          7) {
+                                        return '23 days until your next period';
+                                      } else if (FFAppState()
+                                              .dateSelected
+                                              .last
+                                              .toString() ==
+                                          '9') {
+                                        return '21 Days until your next period';
+                                      } else if (FFAppState()
+                                              .dateSelected
+                                              .last
+                                              .toString() ==
+                                          '11') {
+                                        return '19 Days until your next period';
+                                      } else if (FFAppState()
+                                              .dateSelected
+                                              .last
+                                              .toString() ==
+                                          '12') {
+                                        return '18 Days until your next period';
+                                      } else if (FFAppState()
+                                              .dateSelected
+                                              .last
+                                              .toString() ==
+                                          '13') {
+                                        return '17 Days until your next period';
+                                      } else if (FFAppState()
+                                              .dateSelected
+                                              .last
+                                              .toString() ==
+                                          '14') {
+                                        return '16  Days until your next period';
+                                      } else if (FFAppState()
+                                              .dateSelected
+                                              .last
+                                              .toString() ==
+                                          '16') {
+                                        return '14 Days until your next period';
+                                      } else if (FFAppState()
+                                              .dateSelected
+                                              .last
+                                              .toString() ==
+                                          '20') {
+                                        return '10 Days until your next period';
+                                      } else if (FFAppState()
+                                              .dateSelected
+                                              .last
+                                              .toString() ==
+                                          '23') {
+                                        return '7 Days until your next period';
+                                      } else if (FFAppState()
+                                              .dateSelected
+                                              .last
+                                              .toString() ==
+                                          '25') {
+                                        return '5 Days until your next period';
+                                      } else if (FFAppState()
+                                              .dateSelected
+                                              .last
+                                              .toString() ==
+                                          '26') {
+                                        return '4 Days until your next period';
+                                      } else if (FFAppState()
+                                              .dateSelected
+                                              .last
+                                              .toString() ==
+                                          '29') {
+                                        return '1 Day until your next period';
+                                      } else {
+                                        return 'nothinh';
+                                      }
+                                    }(),
+                                    '1',
                                   ),
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                 );
-                              }
-                              List<NotificationValueRecord>
-                                  textNotificationValueRecordList =
-                                  snapshot.data!;
-                              // Return an empty Container when the item does not exist.
-                              if (snapshot.data!.isEmpty) {
-                                return Container();
-                              }
-                              final textNotificationValueRecord =
-                                  textNotificationValueRecordList.isNotEmpty
-                                      ? textNotificationValueRecordList.first
-                                      : null;
-                              return AutoSizeText(
-                                valueOrDefault<String>(
-                                  () {
-                                    if (FFAppState().dateSelected.last <= 5) {
-                                      return 'You are on your period';
-                                    } else if (FFAppState().dateSelected.last ==
-                                        7) {
-                                      return '23 days until your next period';
-                                    } else if (FFAppState()
-                                            .dateSelected
-                                            .last
-                                            .toString() ==
-                                        '9') {
-                                      return '21 Days until your next period';
-                                    } else if (FFAppState()
-                                            .dateSelected
-                                            .last
-                                            .toString() ==
-                                        '11') {
-                                      return '19 Days until your next period';
-                                    } else if (FFAppState()
-                                            .dateSelected
-                                            .last
-                                            .toString() ==
-                                        '12') {
-                                      return '18 Days until your next period';
-                                    } else if (FFAppState()
-                                            .dateSelected
-                                            .last
-                                            .toString() ==
-                                        '13') {
-                                      return '17 Days until your next period';
-                                    } else if (FFAppState()
-                                            .dateSelected
-                                            .last
-                                            .toString() ==
-                                        '14') {
-                                      return '16  Days until your next period';
-                                    } else if (FFAppState()
-                                            .dateSelected
-                                            .last
-                                            .toString() ==
-                                        '16') {
-                                      return '14 Days until your next period';
-                                    } else if (FFAppState()
-                                            .dateSelected
-                                            .last
-                                            .toString() ==
-                                        '20') {
-                                      return '10 Days until your next period';
-                                    } else if (FFAppState()
-                                            .dateSelected
-                                            .last
-                                            .toString() ==
-                                        '23') {
-                                      return '7 Days until your next period';
-                                    } else if (FFAppState()
-                                            .dateSelected
-                                            .last
-                                            .toString() ==
-                                        '25') {
-                                      return '5 Days until your next period';
-                                    } else if (FFAppState()
-                                            .dateSelected
-                                            .last
-                                            .toString() ==
-                                        '26') {
-                                      return '4 Days until your next period';
-                                    } else if (FFAppState()
-                                            .dateSelected
-                                            .last
-                                            .toString() ==
-                                        '29') {
-                                      return '1 Day until your next period';
-                                    } else {
-                                      return 'nothinh';
-                                    }
-                                  }(),
-                                  '1',
-                                ),
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                              );
-                            },
+                              },
+                            ),
                           ),
                         ),
                       ),
@@ -234,25 +246,20 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                   Align(
                     alignment: AlignmentDirectional(0.0, 1.01),
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 1.615,
+                      width: MediaQuery.of(context).size.width * 1.9,
                       height: 401.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         image: DecorationImage(
-                          fit: BoxFit.fitWidth,
+                          fit: BoxFit.cover,
                           image: Image.asset(
-                            'assets/images/Screenshot_2023-06-14_112245.png',
+                            'assets/images/Screenshot_2023-06-14_141409.png',
                           ).image,
                         ),
                       ),
                     ),
                   ),
                 ],
-              ),
-              ListView(
-                padding: EdgeInsets.zero,
-                scrollDirection: Axis.vertical,
-                children: [],
               ),
             ],
           ),
