@@ -97,6 +97,110 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     color: Color(0xFF38B6FF),
                                     shape: BoxShape.circle,
                                   ),
+                                  child: Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 15.0, 0.0, 0.0),
+                                      child: Text(
+                                        valueOrDefault<String>(
+                                          () {
+                                            if (FFAppState()
+                                                    .dateSelected
+                                                    .last <=
+                                                5) {
+                                              return 'You are on your period';
+                                            } else if (FFAppState()
+                                                    .dateSelected
+                                                    .last ==
+                                                7) {
+                                              return '23 days until your next period';
+                                            } else if (FFAppState()
+                                                    .dateSelected
+                                                    .last
+                                                    .toString() ==
+                                                '9') {
+                                              return '21 Days until your next period';
+                                            } else if (FFAppState()
+                                                    .dateSelected
+                                                    .last
+                                                    .toString() ==
+                                                '11') {
+                                              return '19 Days until your next period';
+                                            } else if (FFAppState()
+                                                    .dateSelected
+                                                    .last
+                                                    .toString() ==
+                                                '12') {
+                                              return '18 Days until your next period';
+                                            } else if (FFAppState()
+                                                    .dateSelected
+                                                    .last
+                                                    .toString() ==
+                                                '13') {
+                                              return '17 Days until your next period';
+                                            } else if (FFAppState()
+                                                    .dateSelected
+                                                    .last
+                                                    .toString() ==
+                                                '14') {
+                                              return '16  Days until your next period';
+                                            } else if (FFAppState()
+                                                    .dateSelected
+                                                    .last
+                                                    .toString() ==
+                                                '16') {
+                                              return '14 Days until your next period';
+                                            } else if (FFAppState()
+                                                    .dateSelected
+                                                    .last
+                                                    .toString() ==
+                                                '20') {
+                                              return '10 Days until your next period';
+                                            } else if (FFAppState()
+                                                    .dateSelected
+                                                    .last
+                                                    .toString() ==
+                                                '23') {
+                                              return '7 Days until your next period';
+                                            } else if (FFAppState()
+                                                    .dateSelected
+                                                    .last
+                                                    .toString() ==
+                                                '25') {
+                                              return '5 Days until your next period';
+                                            } else if (FFAppState()
+                                                    .dateSelected
+                                                    .last
+                                                    .toString() ==
+                                                '26') {
+                                              return '4 Days until your next period';
+                                            } else if (FFAppState()
+                                                    .dateSelected
+                                                    .last
+                                                    .toString() ==
+                                                '29') {
+                                              return '1 Day until your next period';
+                                            } else {
+                                              return 'nothinh';
+                                            }
+                                          }(),
+                                          '1',
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ),
                               Align(
@@ -128,100 +232,6 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   decoration: BoxDecoration(
                                     color: Color(0xFF313131),
                                   ),
-                                ),
-                              ),
-                              Align(
-                                alignment: AlignmentDirectional(-0.01, -0.59),
-                                child: Text(
-                                  valueOrDefault<String>(
-                                    () {
-                                      if (FFAppState().dateSelected.last <= 5) {
-                                        return 'You are on your period';
-                                      } else if (FFAppState()
-                                              .dateSelected
-                                              .last ==
-                                          7) {
-                                        return '23 days until your next period';
-                                      } else if (FFAppState()
-                                              .dateSelected
-                                              .last
-                                              .toString() ==
-                                          '9') {
-                                        return '21 Days until your next period';
-                                      } else if (FFAppState()
-                                              .dateSelected
-                                              .last
-                                              .toString() ==
-                                          '11') {
-                                        return '19 Days until your next period';
-                                      } else if (FFAppState()
-                                              .dateSelected
-                                              .last
-                                              .toString() ==
-                                          '12') {
-                                        return '18 Days until your next period';
-                                      } else if (FFAppState()
-                                              .dateSelected
-                                              .last
-                                              .toString() ==
-                                          '13') {
-                                        return '17 Days until your next period';
-                                      } else if (FFAppState()
-                                              .dateSelected
-                                              .last
-                                              .toString() ==
-                                          '14') {
-                                        return '16  Days until your next period';
-                                      } else if (FFAppState()
-                                              .dateSelected
-                                              .last
-                                              .toString() ==
-                                          '16') {
-                                        return '14 Days until your next period';
-                                      } else if (FFAppState()
-                                              .dateSelected
-                                              .last
-                                              .toString() ==
-                                          '20') {
-                                        return '10 Days until your next period';
-                                      } else if (FFAppState()
-                                              .dateSelected
-                                              .last
-                                              .toString() ==
-                                          '23') {
-                                        return '7 Days until your next period';
-                                      } else if (FFAppState()
-                                              .dateSelected
-                                              .last
-                                              .toString() ==
-                                          '25') {
-                                        return '5 Days until your next period';
-                                      } else if (FFAppState()
-                                              .dateSelected
-                                              .last
-                                              .toString() ==
-                                          '26') {
-                                        return '4 Days until your next period';
-                                      } else if (FFAppState()
-                                              .dateSelected
-                                              .last
-                                              .toString() ==
-                                          '29') {
-                                        return '1 Day until your next period';
-                                      } else {
-                                        return 'nothinh';
-                                      }
-                                    }(),
-                                    '1',
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
                                 ),
                               ),
                               Align(
@@ -390,59 +400,75 @@ class _HomeWidgetState extends State<HomeWidget> {
                           ),
                         ),
                       ),
-                      Container(
-                        width: 100.0,
-                        height: 167.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          image: DecorationImage(
-                            fit: BoxFit.contain,
-                            image: Image.asset(
-                              'assets/images/Screenshot_2023-06-12_144324.png',
-                            ).image,
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 10.0, 30.0),
+                        child: Container(
+                          width: 100.0,
+                          height: 182.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: Image.asset(
+                                'assets/images/Screenshot_2023-06-13_222903.png',
+                              ).image,
+                            ),
                           ),
                         ),
                       ),
-                      Container(
-                        width: 100.0,
-                        height: 167.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          image: DecorationImage(
-                            fit: BoxFit.contain,
-                            image: Image.asset(
-                              'assets/images/Screenshot_2023-06-12_144352.png',
-                            ).image,
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 10.0, 30.0),
+                        child: Container(
+                          width: 100.0,
+                          height: 167.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: Image.asset(
+                                'assets/images/Screenshot_2023-06-13_223211.png',
+                              ).image,
+                            ),
                           ),
                         ),
                       ),
-                      Container(
-                        width: 100.0,
-                        height: 167.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          image: DecorationImage(
-                            fit: BoxFit.contain,
-                            image: Image.asset(
-                              'assets/images/Screenshot_2023-06-12_144418.png',
-                            ).image,
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
+                        child: Container(
+                          width: 100.0,
+                          height: 167.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: Image.asset(
+                                'assets/images/Screenshot_2023-06-13_223558.png',
+                              ).image,
+                            ),
                           ),
                         ),
                       ),
-                      Container(
-                        width: 100.0,
-                        height: 167.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          image: DecorationImage(
-                            fit: BoxFit.contain,
-                            image: Image.asset(
-                              'assets/images/Screenshot_2023-06-12_144444.png',
-                            ).image,
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
+                        child: Container(
+                          width: 100.0,
+                          height: 167.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: Image.asset(
+                                'assets/images/Screenshot_2023-06-13_223939.png',
+                              ).image,
+                            ),
                           ),
                         ),
                       ),
